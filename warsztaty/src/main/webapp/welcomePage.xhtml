@@ -20,6 +20,14 @@
         <a class = "signInButton button" href="signInPage.xhtml">Rejstracja</a>
         <a class = "logInButton button" href="logInPage.xhtml">Logowanie</a>
     </div>
+    <div class="productBox">
+        <div class="product #1">
+            <h:outputLabel value="#{productView.showProduct(1)}"/>
+            <h:commandButton value="Dodaj do koszyka" action="#{productView.buyProduct(1)}"/>
+            <h:outputLabel value="#{productView.showProduct(1)}"/>
+        </div>
+    </div>
+
 </f:view>
 </h:body>
 </html>

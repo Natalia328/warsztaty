@@ -23,6 +23,15 @@ public class ProductEntity implements Serializable {
     public ProductEntity() {
 
     }
+    public void buyProduct(int id) {
+        quantity -=1;
+    }
+    @Override
+    public String toString() {
+        return  productName +
+                " cena=" + price +
+                " zł, dostępna ilość=" + quantity;
+    }
 
     public int getId() {
         return id;
