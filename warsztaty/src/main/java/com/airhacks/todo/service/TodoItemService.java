@@ -3,6 +3,7 @@ package com.airhacks.todo.service;
 
 import com.airhacks.rest.TodoItemDTO;
 import com.airhacks.todo.model.TodoItem;
+import com.airhacks.todo.repository.TodoItemDao;
 import com.airhacks.todo.repository.TodoItemDatabase;
 
 import javax.ejb.Stateless;
@@ -17,10 +18,14 @@ public class TodoItemService {
     @Inject
     private TodoItemDatabase database;
 
+    @Inject
+    private TodoItemDao dao;
+
     public void addItem(String todoItemString) {
         TodoItem item = new TodoItem();
         item.setName(todoItemString);
         database.addTodoItem(item);
+        dao.addNewTodoItem(todoItemString,1);
     }
 
     public List<String> getTodoItemStrings() {
