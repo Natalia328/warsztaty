@@ -1,0 +1,248 @@
+@import url('https://fonts.googleapis.com/css2?family=Josefin+Sans:wght@100;200;300;400;500;600;700&family=Montserrat:wght@100;200;400;700;900&display=swap');
+
+:root {
+    --lightColor: #f1faee;
+    --mainColor: #a8dadc;
+    --darkColor: #e63946;
+}
+*,
+*::before,
+*::after {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+}
+html {
+    font-size: 62.5%;
+    scroll-behavior: smooth;
+}
+body {
+    width: 100vw;
+    height: 100vh;
+    font-size: 3rem;
+    text-transform: uppercase;
+    font-family: 'Montserrat', sans-serif;
+    background: var(--darkColor);
+    color: var(--lightColor);
+}
+.mainPage {
+    display: flex;
+    justify-content: space-around;
+    align-items: flex-start;
+    flex-direction: column;
+    width: 100%;
+    height: 100%;
+    padding: 2em 1em;
+}
+.button {
+    color: var(--lightColor);
+    text-decoration: none;
+    padding: 0.5em 1em;
+    background-color: var(--mainColor);
+    border: 1px solid var(--lightColor);
+    cursor: pointer;
+    box-shadow: 9px 9px var(--lightColor); ;
+    /*margin-right: 0.8em;*/
+    margin-bottom: 0.8em;
+    font-size: 2.3rem;
+    font-family: 'Montserrat', sans-serif;
+    width: 80%;
+    text-align: center;
+}
+.buttons {
+    display: flex;
+    align-items: center;
+    flex-wrap: wrap;
+    flex-direction: column;
+    width: 100%;
+}
+.welcomeButton{
+    width: 80%;
+    text-align: center;
+    margin-bottom: 2em;
+}
+.buttonInColumnOrder {
+    margin-bottom: 1.5em;
+}
+input {
+    background-color: var(--mainColor);
+    border: 1px solid var(--lightColor);
+    padding: 1em;
+    font-family: 'Montserrat', sans-serif;
+    margin: 0 1em 0.4em 1em;
+    width: 80%;
+    text-align: center;
+}
+.mainTitle{
+    font-weight: 600;
+    font-size: 1.8em;
+    width: 100%;
+    text-align: center;
+}
+.legend {
+    font-weight: 600;
+    margin: 0.7em;
+    text-align: center;
+}
+.page {
+    padding-top: 0.5em;
+}
+form {
+    padding: 0 1em;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+.inputTitle{
+    display: inline;
+    font-size: 2rem;
+    margin: 0.3em 0;
+}
+.signInComplete {
+    padding:2em;
+}
+.signInCompleteText {
+    display: flex;
+    flex-direction: column;
+    margin-bottom: 2em;
+}
+.completeLabel{
+    padding-bottom: 0.5em;
+    text-align: center;
+}
+.errorMessage {
+    font-size: 1.5rem;
+    display: inline-block;
+    color: var(--mainColor);
+}
+.header {
+    display: flex;
+    flex-direction: column;
+    justify-content: space-around;
+    padding-bottom: 1em;
+}
+.headerTitle {
+    margin-bottom: 0.5em;
+}
+.product{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: space-around;
+    margin: 1em 1em;
+    background-color: var(--mainColor);
+    border: 1px solid var(--lightColor);
+    box-shadow: 9px 9px var(--lightColor) ;
+}
+.productName {
+    padding: 1em;
+}
+.productBox {
+    display: flex;
+    flex-direction: column;
+    height: 40vh;
+    padding: 0 1em;
+}
+.orderListTitle {
+    padding: 1em;
+}
+.adminBoxTitle{
+    display: flex;
+    justify-content: center;
+    padding: 0 1em 1em 1em;
+}
+.adminTitle, .orderTitle{
+    text-align: center;
+}
+.adminButtons{
+    flex-direction: column;
+    align-items: center;
+}
+.adminButton{
+    width: 50vw;
+    text-align: center;
+    margin-bottom: 1.5em;
+}
+.adminList{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+.itemFromList{
+    padding: 0.5em 0;
+    border-top: 1px solid var(--mainColor);
+    text-transform: initial;
+    width: 80vw;
+    text-align: center;
+    font-size: 2.5rem;
+}
+.itemFromList:last-of-type{
+    border-bottom: 1px solid var(--mainColor);
+}
+
+@media (min-width: 576px) {
+    /*.mainPage, .page {*/
+    /*    background-color: red;*/
+    /*}*/
+    .button{
+        width: 60%;
+    }
+    input {
+        width: 60%;
+    }
+    .buttonInColumnOrder {
+        width: 80%;
+    }
+
+}
+
+@media (min-width: 768px) {
+    /*.mainPage, .page {*/
+    /*    background-color: green;*/
+    /*}*/
+    .button{
+        width: 40%;
+    }
+    input {
+        width: 40%;
+    }
+    .buttonInColumnOrder {
+        width: 80%;
+    }
+    .header {
+        flex-direction: row;
+    }
+    .headerTitle {
+        margin-bottom: 0em;
+        width: 100%;
+    }
+    .productBox {
+        flex-direction: row;
+        justify-content: center;
+        margin: 0 1em;
+    }
+    .adminButton {
+        width: 50%;
+    }
+}
+
+@media (min-width: 992px) {
+    /*.mainPage, .page {*/
+    /*    background-color: yellow;*/
+    /*}*/
+    .button{
+        width: 25%;
+    }
+    .welcomeButton{
+        width: 35%;
+    }
+    input {
+        width: 30%;
+    }
+    .buttonInColumnOrder {
+        width: 80%;
+    }
+    .adminButton {
+        width: 50%;
+    }
+}

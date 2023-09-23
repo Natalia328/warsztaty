@@ -2,16 +2,16 @@ package com.airhacks.rest.store_rest;
 
 public class ProductRequest {
 
-    private int id;
+    private Long id;
     private String productName;
     private double price;
     private int quantity;
 
-    public int getId() {
+    public Long getId() {
         return id;
     }
 
-    public void setId(int id) {
+    public void setId(Long id) {
         this.id = id;
     }
 

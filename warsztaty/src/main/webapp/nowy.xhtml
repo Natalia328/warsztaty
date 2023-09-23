@@ -1,0 +1,48 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN"
+        "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml"
+      xmlns:h="http://xmlns.jcp.org/jsf/html"
+      xmlns:ui="http://xmlns.jcp.org/jsf/facelets"
+      xmlns:f="http://xmlns.jcp.org/jsf/core">
+<h:head>
+    <title>Sklep z e-bookami</title>
+    <h:outputStylesheet library="css" name="style.css"/>
+
+</h:head>
+<f:view>
+    <h:form>
+        <div class="mainPage">
+            <h:outputLabel class="mainTitle" value="Sklep internetowy z e-bookami"/>
+        </div>
+        <div class="header">
+            <h:outputLabel value="Witaj #{logInView.showLoggedUser()}" styleClass="headerTitle"/>
+            <h:commandButton value="Wyloguj się" action="#{logInView.logout}" styleClass="button buttonInColumnOrder"/>
+        </div>
+    </h:form>
+
+    <div class="productBox">
+        <div class="product">
+            <!--      <h:outputLabel value="#{productView.setNew()}"/>-->
+            <!--      <h:outputLabel value="#{productView.setNew()}" styleClass="productName"/>-->
+            <h:outputLabel value="#{productView}" styleClass="productName"/>
+        </div>
+
+        <!--    <div class="product">-->
+        <!--      <h:outputLabel value="#{productView.showProduct(1)}" styleClass="productName"/>-->
+        <!--      <h:form>-->
+        <!--        <h:commandButton value="Dodaj do koszyka" action="#{logInView.buyProduct(1)}" styleClass="button buttonInColumnOrder"/>-->
+        <!--      </h:form>-->
+        <!--    </div>-->
+        <!--    <div class="product">-->
+        <!--      <h:outputLabel value="#{productView.showProduct(2)}" styleClass="productName"/>-->
+        <!--      <h:form>-->
+        <!--        <h:commandButton value="Dodaj do koszyka" action="#{logInView.buyProduct(2)}" styleClass="button buttonInColumnOrder"/>-->
+        <!--      </h:form>-->
+        <!--    </div>-->
+
+
+    </div>
+
+</f:view>
+</html>

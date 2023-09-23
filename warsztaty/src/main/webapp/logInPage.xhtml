@@ -3,49 +3,47 @@
 <html xmlns="http://www.w3.org/1999/xhtml"
       xmlns:h="http://java.sun.com/jsf/html"
       xmlns:f="http://java.sun.com/jsf/core"
-      xmlns:p="http://primefaces.org/ui" > <!-- Potrzebne dla PF -->
+      xmlns:p="http://primefaces.org/ui" >
 
-<h:head><title>Sklep internetowy</title>
-
+<h:head>
+    <title>Sklep z e-bookami</title>
+    <h:outputStylesheet library="css" name="style.css"/>
 </h:head>
 
 <h:body>
-    <h:outputStylesheet library="css" name="style.css"/>
 
-    <div align="center">
-        <h1>Logowanie</h1>
+        <h2 class="page mainTitle">Logowanie</h2>
 
+        <p class="legend">Zaloguj się</p>
 
-        <fieldset>
-            <legend>Zaloguj się</legend>
-            <h:form>
-                Email: <h:inputText value="#{logInView.email}"
+            <h:form id="loginForm" >
+                <p class="inputTitle">Email:</p>
+               <h:inputText value="#{logInView.email}"
                                     required="true"
                                     requiredMessage="Pole 'email' jest wymagane"
                                     id="email">
-            </h:inputText><h:message for="email"/>
-
-                <br/>
-                Hasło: <h:inputSecret value="#{logInView.password}"
+            </h:inputText>
+                <p class="errorMessage">
+                    <h:message for="email"/>
+                </p>
+                <p class="inputTitle">Hasło:</p>
+                 <h:inputSecret value="#{logInView.password}"
                                     required="true"
                                     requiredMessage="Pole 'hasło' jest wymagane"
                                     id="password">
-            </h:inputSecret><h:message for="password"/>
-                <br/>
+            </h:inputSecret>
+                <p class="errorMessage">
+                    <h:message for="password"/>
+                </p>
 
-                <!-- Komponent PF -->
-                <p:spinner />
                 <br />
 
-                <h:commandButton value="Zaloguj się" action="#{logInView.checkIfUserExist}"/>     <!-- wywołanie metody akcyjnej kontrolera -->
-
+                <h:commandButton value="Zaloguj się" action="#{logInView.checkIfUserExist}" styleClass="button"/>
+                <p class="errorMessage">
+                    <h:message for="loginForm"/>
+                </p>
             </h:form>
 
 
-        </fieldset>
-
-        <hr/>
-
-    </div>
 </h:body>
 </html>

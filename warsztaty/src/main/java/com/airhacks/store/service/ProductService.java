@@ -3,6 +3,7 @@ package com.airhacks.store.service;
 import com.airhacks.rest.store_rest.*;
 import com.airhacks.store.dao.ProductDao;
 import com.airhacks.store.model.jpa.ProductEntity;
+import com.airhacks.store.model.jpa.UserEntity;
 
 import javax.ejb.Stateless;
 import javax.inject.Inject;
@@ -15,7 +16,16 @@ public class ProductService {
         @Inject
         private ProductDao productDao;
 
-        public ProductResponse getProduct(int id){
+        public void addNewProduct(ProductRequest request) {
+            ProductEntity productEntity = new ProductEntity();
+            productEntity.setProductName(request.getProductName());
+            productEntity.setQuantity(request.getQuantity());
+            productEntity.setPrice(request.getPrice());
+            productEntity.setId(request.getId());
+            productDao.addNewProduct(productEntity);
+        }
+
+        public ProductResponse getProduct(Long id){
             ProductResponse response = new ProductResponse();
             ProductEntity entity = productDao.getProduct(id);
             response.setProductName(entity.getProductName());

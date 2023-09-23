@@ -27,7 +27,6 @@ public class SubjectService {
         subjectEntity.setYear(request.getYear());
         LecturerEntity lecturerEntity = lecturerDao.getLecturer(request.getLecturerId());
         subjectEntity.setLecturer(lecturerEntity);
-
         subjectDao.addNewSubject(subjectEntity);
     }
 

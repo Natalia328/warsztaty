@@ -62,6 +62,13 @@ public class UserDao implements Serializable {
                     .getResultList();
         }
 
+    public List<UserEntity> isEmailExist(String email) {
+        String query = "select l from UserEntity l where l.email = :email";
+        return entityManager
+                .createQuery(query, UserEntity.class)
+                .setParameter("email", email)
+                .getResultList();
     }
+}
 
 
