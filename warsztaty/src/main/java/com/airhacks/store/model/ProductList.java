@@ -1,6 +1,8 @@
 package com.airhacks.store.model;
 
 import com.airhacks.store.model.jpa.ProductEntity;
+import org.hibernate.Session;
+import org.hibernate.Transaction;
 
 import java.util.ArrayList;
 import java.util.List;
@@ -9,8 +11,7 @@ public class ProductList {
 
     private List<ProductEntity> productList = new ArrayList<>();
 
-
-    // zrobiłam to przez CMD = czy to poprawne?
+//    Session session = HibernateSessionFactoryUtil.openSession();
 
 //    public ProductList() {
 //        productList.add(new ProductEntity(001, "Produkt #1", 100, 200));

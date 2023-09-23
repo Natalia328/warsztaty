@@ -1,9 +1,8 @@
 package com.airhacks.store.model.jpa;
 
-import com.airhacks.university.lecturer.model.SubjectEntity;
-
 import javax.persistence.*;
 import java.io.Serializable;
+import java.util.Collection;
 
 @Entity
 @Table(name = "users")
@@ -24,7 +23,8 @@ public class UserEntity implements Serializable {
 
         @Column(name = "password", nullable = false)
         private String password;
-
+        @OneToMany(mappedBy = "user", fetch = FetchType.EAGER)
+        private Collection<OrdersEntity> ordersEntities;
 
         public Long getId() {
             return id;
@@ -58,12 +58,24 @@ public class UserEntity implements Serializable {
             this.email = email;
         }
 
-    public String getPassword() {
+        public String getPassword() {
         return password;
     }
 
-    public void setPassword(String password) {
+        public void setPassword(String password) {
         this.password = password;
+    }
+        public Collection<OrdersEntity> getOrdersEntities() {
+        return ordersEntities;
+    }
+        public void setOrdersEntities(Collection<OrdersEntity> ordersEntities) {
+        this.ordersEntities = ordersEntities;
+    }
+
+    @Override
+    public String toString() {
+        return firstName +
+                " " + lastName + " " + email;
     }
 }
 

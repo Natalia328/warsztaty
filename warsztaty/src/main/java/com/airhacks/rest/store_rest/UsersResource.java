@@ -1,6 +1,7 @@
 package com.airhacks.rest.store_rest;
 
 import com.airhacks.rest.*;
+import com.airhacks.store.service.OrderService;
 import com.airhacks.store.service.UserService;
 import com.airhacks.university.lecturer.service.LecturerService;
 import com.airhacks.university.lecturer.service.SubjectService;
@@ -18,8 +19,8 @@ public class UsersResource {
         @Inject
         private UserService userService;
 
-//        @Inject
-//        private SubjectService subjectService;
+        @Inject
+        private OrderService orderService;
 
         @POST
         @Path("user")
@@ -39,19 +40,15 @@ public class UsersResource {
             return userService.getUsers();
         }
 
-//        @POST
-//        @Path("subject")
-//        public void addNewSubject(@RequestBody SubjectRequest request){
-//            subjectService.addNewSubject(request);
-//
-//        }
-//
-//        @GET
-//        @Path("subject/{id}")
-//        public SubjectResponse getSubject(@PathParam("id") Long id) {
-//            return subjectService.getSubject(id);
-//        }
-
-
-
+//        post nie działa :(
+        @POST
+        @Path("orders")
+        public void addNewOrder(@RequestBody OrderRequest request){
+            orderService.addNewOrder(request);
+        }
+        @GET
+        @Path("orders/{id}")
+        public OrderResponse getOrder(@PathParam("id") Long id) {
+            return orderService.getOrder(id);
+        }
 }

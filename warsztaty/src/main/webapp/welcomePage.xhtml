@@ -7,19 +7,23 @@
       xmlns:f="http://xmlns.jcp.org/jsf/core">
 
 <h:head>
-    <title>Sklep internetowy</title>
-    <h:outputStylesheet library="css" name="style.css"/>
+    <title>Sklep z e-bookami</title>
+
 </h:head>
 
 <h:body>
-
+    <h:outputStylesheet library="css" name="style.css"/>
 <f:view>
-    <h:outputLabel value="Hello, new Page"/>
-    <p>Witaj w sklepie internetowym</p>
+    <div class="mainPage">
+<!--        zwykla h1-->
+    <h:outputLabel class="mainTitle" value="Witaj w sklepie z e-bookami"/>
+
     <div class="buttons">
-        <a class = "signInButton button" href="signInPage.xhtml">Rejstracja</a>
-        <a class = "logInButton button" href="logInPage.xhtml">Logowanie</a>
+        <a class= "welcomeButton button" href="signInPage.xhtml">Rejestracja</a>
+        <a class= "welcomeButton button" href="logInPage.xhtml">Logowanie</a>
     </div>
+</div>
+
 </f:view>
 </h:body>
 </html>

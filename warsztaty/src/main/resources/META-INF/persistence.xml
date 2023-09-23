@@ -12,6 +12,7 @@
             <property name="hibernate.format_sql" value="true" />
             <property name="hibernate.use_sql_comments" value="true" />
             <property name="hibernate.hbm2ddl.auto" value="update"/>
+<!--            put create to clear DB and start numbers from 0-->
         </properties>
     </persistence-unit>
 </persistence>

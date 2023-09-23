@@ -3,72 +3,72 @@
 <html xmlns="http://www.w3.org/1999/xhtml"
       xmlns:h="http://java.sun.com/jsf/html"
       xmlns:f="http://java.sun.com/jsf/core"
-      xmlns:p="http://primefaces.org/ui" > <!-- Potrzebne dla PF -->
+      xmlns:p="http://primefaces.org/ui" >
 
 <h:head>
-    <title>Sklep internetowy</title>
-
+    <title>Sklep z e-bookami</title>
     <h:outputStylesheet library="css" name="style.css"/>
 
 </h:head>
 <h:body>
-    <div align="center">
-        <h1>Rejestracja</h1>
+        <h2 class="page mainTitle">Rejestracja</h2>
 
+            <p class="legend">Załóż konto</p>
 
-        <fieldset>
-            <legend>Załóż konto</legend>
-            <h:form>
-
-
-                Imię: <h:inputText value="#{addUserView.firstName}"
+            <h:form id="signinForm">
+                <p class="inputTitle">Imię:</p>
+                 <h:inputText value="#{addUserView.firstName}"
                                    required="true"
                                    requiredMessage="Pole 'imię' jest wymagane"
                                    validatorMessage="Pole 'imie' musi mieć min. 3 znaki"
                                     id="firstName">
                 <f:validateLength minimum="3" />
-            </h:inputText><h:message for="firstName"/>
-                <br/>
+            </h:inputText>
+                <p class="errorMessage">
+                <h:message for="firstName"/>
+                </p>
 
-                Nazwisko: <h:inputText value="#{addUserView.lastName}"
+                <p class="inputTitle">Nazwisko:</p>
+                 <h:inputText value="#{addUserView.lastName}"
                                        required="true"
                                        requiredMessage="Pole 'nazwisko' jest wymagane"
                                        id="lastName">
-            </h:inputText><h:message for="lastName"/>
-                <br/>
+            </h:inputText>
+                <p class="errorMessage">
+                    <h:message for="lastName"/>
+                </p>
 
-                Email: <h:inputText value="#{addUserView.email}"
+                <p class="inputTitle">Email:</p>
+                <h:inputText value="#{addUserView.email}"
                                     required="true"
                                     requiredMessage="Pole 'email' jest wymagane"
                                     validatorMessage="Pole musi byc poprawnym emailem"
                                     id="email">
                 <f:validateRegex pattern="^[_A-Za-z0-9-\+]+(\.[_A-Za-z0-9-]+)*@[A-Za-z0-9-]+(\.[A-Za-z0-9]+)*(\.[A-Za-z]{2,})$" />
-            </h:inputText><h:message for="email"/>
-                <br/>
-
-                Hasło: <h:inputSecret value="#{addUserView.password}"
+            </h:inputText>
+                <p class="errorMessage">
+                    <h:message for="email"/>
+                </p>
+                <p class="inputTitle">Hasło:</p>
+                <h:inputSecret value="#{addUserView.password}"
                                     required="true"
                                     requiredMessage="Pole 'hasło' jest wymagane"
-                                    validatorMessage="Pole musi mieć 8 znaków, przynajmniej jedną cyfrę i jeden znak specjalny"
+                                    validatorMessage="Pole musi mieć 8 znaków, jedną cyfrę i znak specjalny"
                                     id="password">
                 <f:validateRegex pattern="^(?=.*[A-Za-z])(?=.*\d)(?=.*[@$!%*#?])[A-Za-z\d@$!%*#?]{8,}$" />
-            </h:inputSecret><h:message for="password"/>
+            </h:inputSecret>
+                <p class="errorMessage">
+                    <h:message for="password"/>
+                </p>
 
-                <br/>
-
-                <!-- Komponent PF -->
-                <p:spinner />
                 <br />
 
-                <h:commandButton value="Zapisz się" action="#{addUserView.addUserItem}"/>     <!-- wywołanie metody akcyjnej kontrolera -->
-
+                <h:commandButton value="Zapisz się" action="#{addUserView.addUserItem}" styleClass="button"/>
+                <p class="errorMessage">
+                    <h:message for="signinForm"/>
+                </p>
             </h:form>
 
 
-        </fieldset>
-
-        <hr/>
-
-    </div>
 </h:body>
 </html>
