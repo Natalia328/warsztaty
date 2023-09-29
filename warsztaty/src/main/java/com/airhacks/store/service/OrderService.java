@@ -56,7 +56,6 @@ public class OrderService {
         ProductDTO product = new ProductDTO();
         ProductEntity productEntity = ordersEntity.getProduct();
         product.setProductName(productEntity.getProductName());
-        product.setQuantity(productEntity.getQuantity());
         product.setPrice(productEntity.getPrice());
         product.setId(productEntity.getId());
         response.setProduct(product);

@@ -57,9 +57,8 @@ public class OrdersEntity {
 
     @Override
     public String toString() {
-        return
-                user.getEmail() +
-                ", data zamówienia='" + orderDate +
-                ", " + product.getProductName();
+        return "Użytkownik: " + user.getEmail() + "<br>" +
+                "Data zamówienia= " + orderDate + "<br>" +
+                product.getProductName();
     }
 }

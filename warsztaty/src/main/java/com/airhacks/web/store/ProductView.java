@@ -2,21 +2,11 @@ package com.airhacks.web.store;
 
 
 import com.airhacks.store.dao.ProductDao;
-import com.airhacks.store.model.SessionUtils;
 import com.airhacks.store.model.jpa.ProductEntity;
 
-import javax.annotation.PostConstruct;
-import javax.ejb.*;
-import javax.enterprise.context.RequestScoped;
 import javax.faces.bean.ManagedBean;
 import javax.faces.bean.SessionScoped;
-import javax.faces.context.FacesContext;
 import javax.inject.Inject;
-import javax.inject.Named;
-import javax.persistence.EntityManager;
-import javax.persistence.EntityManagerFactory;
-import javax.persistence.PersistenceContext;
-import javax.servlet.http.HttpSession;
 import java.io.Serializable;
 import java.util.List;
 
@@ -32,16 +22,6 @@ public class ProductView implements Serializable {
     private String productName;
 
     private double price;
-
-    private int quantity;
-
-//    @TransactionAttribute(TransactionAttributeType.REQUIRES_NEW)
-//    public void setNew() {
-//        ProductEntity p14 = new ProductEntity(1L, "Książka kucharska", 49.99, 100);
-//        productDao.addNewProduct(p14);
-//        ProductEntity p2 = new ProductEntity(2L, "Przewodnik górski", 59.99, 100);
-//        productDao.addNewProduct(p2);
-//    }
 
     public Long getId() {
         return id;
@@ -67,19 +47,16 @@ public class ProductView implements Serializable {
         this.price = price;
     }
 
-    public int getQuantity() {
-        return quantity;
-    }
-
-    public void setQuantity(int quantity) {
-        this.quantity = quantity;
-    }
 
 
-    public String showProduct(Long id) {
+    public String showProductName(Long id) {
         ProductEntity product = productDao.getProduct(id);
-        return product.toString();
-    }   
+        return product.getProductName();
+    }
+    public String showProductPrice(Long id) {
+        ProductEntity product = productDao.getProduct(id);
+        return product.getPrice() + " zł";
+    }
     
     public String showProducts() {
         List<ProductEntity> products = productDao.getProducts();

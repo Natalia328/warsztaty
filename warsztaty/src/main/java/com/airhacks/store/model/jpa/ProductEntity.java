@@ -1,9 +1,5 @@
 package com.airhacks.store.model.jpa;
 
-import com.airhacks.store.model.HibernateUtil;
-import org.hibernate.Session;
-import org.hibernate.Transaction;
-
 import javax.persistence.*;
 import java.io.Serializable;
 import java.util.Collection;
@@ -11,11 +7,10 @@ import java.util.Collection;
 @Entity
 @Table(name = "products")
 public class ProductEntity implements Serializable {
-    public ProductEntity(Long id, String productName, double price, int quantity) {
+    public ProductEntity(Long id, String productName, double price) {
         this.id = id;
         this.productName = productName;
         this.price = price;
-        this.quantity = quantity;
     }
 
     public ProductEntity() {
@@ -29,9 +24,6 @@ public class ProductEntity implements Serializable {
 
     @Column(name = "price", nullable = false)
     private double price;
-
-    @Column(name = "quantity", nullable = false)
-    private int quantity;
 
     @OneToMany(mappedBy = "product", fetch = FetchType.EAGER)
     private Collection<OrdersEntity> ordersEntities;
@@ -47,8 +39,8 @@ public class ProductEntity implements Serializable {
     @Override
     public String toString() {
         return  productName +
-                " cena=" + price +
-                " zł, dostępna ilość=" + quantity;
+                "<br>" + price +
+                " zł";
     }
 
     public Long getId() {
@@ -73,14 +65,6 @@ public class ProductEntity implements Serializable {
 
     public void setPrice(double price) {
         this.price = price;
-    }
-
-    public int getQuantity() {
-        return quantity;
-    }
-
-    public void setQuantity(int quantity) {
-        this.quantity = quantity;
     }
 
 }

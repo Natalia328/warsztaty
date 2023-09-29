@@ -11,8 +11,9 @@
             <property name="hibernate.dialect" value="org.hibernate.dialect.MySQL8Dialect"/>
             <property name="hibernate.format_sql" value="true" />
             <property name="hibernate.use_sql_comments" value="true" />
-            <property name="hibernate.hbm2ddl.auto" value="update"/>
+            <property name="hibernate.hbm2ddl.auto" value="create"/>
 <!--            put create to clear DB and start numbers from 0-->
+<!--            put update for normal approach -->
         </properties>
     </persistence-unit>
 </persistence>

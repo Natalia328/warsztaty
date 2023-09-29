@@ -1,9 +1,11 @@
-@import url('https://fonts.googleapis.com/css2?family=Josefin+Sans:wght@100;200;300;400;500;600;700&family=Montserrat:wght@100;200;400;700;900&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Montserrat:wght@400;700;900&display=swap');
+
 
 :root {
-    --lightColor: #f1faee;
-    --mainColor: #a8dadc;
-    --darkColor: #e63946;
+    --lightColor: #ffd3ac;
+    --mainColor: #89425d;
+    --darkColor: #603453;
+    --errorColor:#c55b73;
 }
 *,
 *::before,
@@ -17,37 +19,39 @@ html {
     scroll-behavior: smooth;
 }
 body {
-    width: 100vw;
-    height: 100vh;
+    font-family: 'Montserrat', sans-serif;
     font-size: 3rem;
     text-transform: uppercase;
-    font-family: 'Montserrat', sans-serif;
     background: var(--darkColor);
     color: var(--lightColor);
 }
 .mainPage {
     display: flex;
-    justify-content: space-around;
+    justify-content: space-evenly;
     align-items: flex-start;
     flex-direction: column;
-    width: 100%;
-    height: 100%;
+    width: 100vw;
+    height: 100vh;
     padding: 2em 1em;
 }
+.panelPage {
+    margin: 2em;
+    text-align: center;
+}
 .button {
-    color: var(--lightColor);
-    text-decoration: none;
-    padding: 0.5em 1em;
-    background-color: var(--mainColor);
-    border: 1px solid var(--lightColor);
-    cursor: pointer;
-    box-shadow: 9px 9px var(--lightColor); ;
-    /*margin-right: 0.8em;*/
+    width: 80%;
     margin-bottom: 0.8em;
+    padding: 0.8em 1.6em;
     font-size: 2.3rem;
     font-family: 'Montserrat', sans-serif;
-    width: 80%;
+    font-weight: 600;
+    border: 2px solid var(--lightColor);
+    color: var(--lightColor);
+    text-decoration: none;
+    background-color: var(--mainColor);
+    cursor: pointer;
     text-align: center;
+    text-transform: uppercase;
 }
 .buttons {
     display: flex;
@@ -58,25 +62,31 @@ body {
 }
 .welcomeButton{
     width: 80%;
-    text-align: center;
     margin-bottom: 2em;
+    text-align: center;
+}
+.startButton{
+    margin-top: 1em;
+}
+.buttonBuy {
+    background-color: var(--darkColor);
 }
 .buttonInColumnOrder {
     margin-bottom: 1.5em;
 }
 input {
-    background-color: var(--mainColor);
-    border: 1px solid var(--lightColor);
+    width: 80%;
+    margin: 0 1em 0.4em 1em;
     padding: 1em;
     font-family: 'Montserrat', sans-serif;
-    margin: 0 1em 0.4em 1em;
-    width: 80%;
+    background-color: var(--mainColor);
+    border: 1px solid var(--lightColor);
     text-align: center;
 }
 .mainTitle{
-    font-weight: 600;
-    font-size: 1.8em;
     width: 100%;
+    font-size: 1.8em;
+    font-weight: 600;
     text-align: center;
 }
 .legend {
@@ -88,15 +98,15 @@ input {
     padding-top: 0.5em;
 }
 form {
-    padding: 0 1em;
     display: flex;
     flex-direction: column;
     align-items: center;
+    padding: 0 1em;
 }
 .inputTitle{
+    margin: 0.3em 0;
     display: inline;
     font-size: 2rem;
-    margin: 0.3em 0;
 }
 .signInComplete {
     padding:2em;
@@ -113,7 +123,7 @@ form {
 .errorMessage {
     font-size: 1.5rem;
     display: inline-block;
-    color: var(--mainColor);
+    color: var(--errorColor);
 }
 .header {
     display: flex;
@@ -123,16 +133,18 @@ form {
 }
 .headerTitle {
     margin-bottom: 0.5em;
+    text-align: center;
 }
 .product{
     display: flex;
     flex-direction: column;
     align-items: center;
     justify-content: space-around;
+    height: 42vh;
     margin: 1em 1em;
     background-color: var(--mainColor);
-    border: 1px solid var(--lightColor);
-    box-shadow: 9px 9px var(--lightColor) ;
+    border: 5px solid var(--lightColor);
+    font-weight: 900;
 }
 .productName {
     padding: 1em;
@@ -140,18 +152,18 @@ form {
 .productBox {
     display: flex;
     flex-direction: column;
-    height: 40vh;
-    padding: 0 1em;
+    flex-wrap: wrap;
 }
 .orderListTitle {
     padding: 1em;
+    text-align: center;
 }
 .adminBoxTitle{
     display: flex;
     justify-content: center;
     padding: 0 1em 1em 1em;
 }
-.adminTitle, .orderTitle{
+.adminTitle{
     text-align: center;
 }
 .adminButtons{
@@ -160,8 +172,8 @@ form {
 }
 .adminButton{
     width: 50vw;
-    text-align: center;
     margin-bottom: 1.5em;
+    text-align: center;
 }
 .adminList{
     display: flex;
@@ -169,21 +181,18 @@ form {
     align-items: center;
 }
 .itemFromList{
+    width: 80vw;
     padding: 0.5em 0;
+    font-size: 2.5rem;
     border-top: 1px solid var(--mainColor);
     text-transform: initial;
-    width: 80vw;
     text-align: center;
-    font-size: 2.5rem;
 }
 .itemFromList:last-of-type{
     border-bottom: 1px solid var(--mainColor);
 }
 
 @media (min-width: 576px) {
-    /*.mainPage, .page {*/
-    /*    background-color: red;*/
-    /*}*/
     .button{
         width: 60%;
     }
@@ -193,13 +202,9 @@ form {
     .buttonInColumnOrder {
         width: 80%;
     }
-
 }
 
 @media (min-width: 768px) {
-    /*.mainPage, .page {*/
-    /*    background-color: green;*/
-    /*}*/
     .button{
         width: 40%;
     }
@@ -214,12 +219,13 @@ form {
     }
     .headerTitle {
         margin-bottom: 0em;
-        width: 100%;
     }
     .productBox {
         flex-direction: row;
         justify-content: center;
-        margin: 0 1em;
+    }
+    .product{
+        width: 40%;
     }
     .adminButton {
         width: 50%;
@@ -227,9 +233,6 @@ form {
 }
 
 @media (min-width: 992px) {
-    /*.mainPage, .page {*/
-    /*    background-color: yellow;*/
-    /*}*/
     .button{
         width: 25%;
     }

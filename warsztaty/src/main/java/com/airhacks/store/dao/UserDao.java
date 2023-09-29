@@ -2,7 +2,6 @@ package com.airhacks.store.dao;
 
 import com.airhacks.rest.store_rest.UserDTO;
 import com.airhacks.store.model.jpa.UserEntity;
-
 import javax.persistence.EntityManager;
 import javax.persistence.PersistenceContext;
 import java.io.Serializable;
@@ -46,8 +45,6 @@ public class UserDao implements Serializable {
                 .setParameter("password", password)
                 .getResultList();
     }
-
-
 
         public List<UserEntity> getUsers(){
             return entityManager

@@ -1,12 +1,8 @@
 package com.airhacks.rest.store_rest;
 
-import com.airhacks.rest.*;
 import com.airhacks.store.service.OrderService;
 import com.airhacks.store.service.UserService;
-import com.airhacks.university.lecturer.service.LecturerService;
-import com.airhacks.university.lecturer.service.SubjectService;
 import org.eclipse.microprofile.openapi.annotations.parameters.RequestBody;
-
 import javax.inject.Inject;
 import javax.ws.rs.*;
 
@@ -40,7 +36,6 @@ public class UsersResource {
             return userService.getUsers();
         }
 
-//        post nie działa :(
         @POST
         @Path("orders")
         public void addNewOrder(@RequestBody OrderRequest request){
@@ -51,4 +46,5 @@ public class UsersResource {
         public OrderResponse getOrder(@PathParam("id") Long id) {
             return orderService.getOrder(id);
         }
+
 }
