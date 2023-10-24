@@ -5,7 +5,7 @@
     --lightColor: #ffd3ac;
     --mainColor: #89425d;
     --darkColor: #603453;
-    --errorColor:#c55b73;
+    --actionColor:#c55b73;
 }
 *,
 *::before,
@@ -52,6 +52,12 @@ body {
     cursor: pointer;
     text-align: center;
     text-transform: uppercase;
+    transition: color, border, background-color 0.3s;
+}
+.button:hover {
+    color: var(--actionColor);
+    border: 2px solid var(--actionColor);
+    background-color: var(--darkColor)
 }
 .buttons {
     display: flex;
@@ -123,7 +129,7 @@ form {
 .errorMessage {
     font-size: 1.5rem;
     display: inline-block;
-    color: var(--errorColor);
+    color: var(--actionColor);
 }
 .header {
     display: flex;
@@ -147,7 +153,7 @@ form {
     font-weight: 900;
 }
 .productName {
-    padding: 1em;
+    padding: 0 1em 0;
 }
 .productBox {
     display: flex;
@@ -249,3 +255,4 @@ form {
         width: 50%;
     }
 }
+
