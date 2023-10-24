@@ -15,16 +15,10 @@ public class SessionUtils {
                 .getExternalContext().getRequest();
     }
 
-    public static String getUserName() {
-        HttpSession session = (HttpSession) FacesContext.getCurrentInstance()
-                .getExternalContext().getSession(false);
-        return session.getAttribute("username").toString();
-    }
-
-    public static String getUserId() {
+    public static Long getUserID() {
         HttpSession session = getSession();
         if (session != null)
-            return (String) session.getAttribute("id");
+            return (Long) session.getAttribute("userSessionID");
         else
             return null;
     }

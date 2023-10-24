@@ -1,10 +1,7 @@
 package com.airhacks.web.store;
 
 import com.airhacks.rest.store_rest.UserRequest;
-import com.airhacks.store.dao.ProductDao;
 import com.airhacks.store.dao.UserDao;
-import com.airhacks.store.model.SessionUtils;
-import com.airhacks.store.model.jpa.ProductEntity;
 import com.airhacks.store.model.jpa.UserEntity;
 import com.airhacks.store.service.UserService;
 
@@ -13,7 +10,6 @@ import javax.faces.application.FacesMessage;
 import javax.faces.context.FacesContext;
 import javax.inject.Inject;
 import javax.inject.Named;
-import javax.servlet.http.HttpSession;
 import java.io.Serializable;
 import java.util.List;
 
@@ -91,7 +87,6 @@ public class AddUserView implements Serializable{
         } else
             return false;
     }
-
 
     public String showUsers() {
         List<UserEntity> users = userDao.getUsers();

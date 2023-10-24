@@ -1,14 +1,11 @@
 package com.airhacks.store.service;
 
-import com.airhacks.rest.*;
 import com.airhacks.rest.store_rest.UserDTO;
 import com.airhacks.rest.store_rest.UserRequest;
 import com.airhacks.rest.store_rest.UserResponse;
 import com.airhacks.rest.store_rest.UsersResponse;
 import com.airhacks.store.dao.UserDao;
 import com.airhacks.store.model.jpa.UserEntity;
-
-
 import javax.ejb.Stateless;
 import javax.inject.Inject;
 import java.util.ArrayList;
@@ -37,26 +34,8 @@ public class UserService {
             response.setEmail(entity.getEmail());
             response.setPassword(entity.getPassword());
             response.setId(entity.getId());
-
-//            Collection<SubjectDTO> subjectDTOS = getSubjectDTOS(entity);
-//            response.setSubjects(subjectDTOS);
             return response;
         }
-
-//        private Collection<SubjectDTO> getSubjectDTOS(LecturerEntity entity) {
-//            Collection<SubjectEntity> subjectEntities = entity.getSubjects();
-//            Collection<SubjectDTO> subjectDTOS = new ArrayList<>();
-//
-//            for (SubjectEntity subjectEntity: subjectEntities) {
-//                SubjectDTO subjectDTO = new SubjectDTO();
-//                subjectDTO.setId(subjectEntity.getId());
-//                subjectDTO.setName(subjectEntity.getName());
-//                subjectDTO.setYear(subjectEntity.getYear());
-//                subjectDTOS.add(subjectDTO);
-//            }
-//            return subjectDTOS;
-//        }
-
 
         public UsersResponse getUsers(){
             UsersResponse response = new UsersResponse();
@@ -81,5 +60,4 @@ public class UserService {
             response.setUsers(userDTOS);
             return response;
         }
-    }
-
+}

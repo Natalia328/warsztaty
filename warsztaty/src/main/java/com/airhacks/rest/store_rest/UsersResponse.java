@@ -1,7 +1,5 @@
 package com.airhacks.rest.store_rest;
 
-import com.airhacks.rest.LecturerDTO;
-
 import java.util.Collection;
 
 public class UsersResponse {

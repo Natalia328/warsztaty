@@ -12,7 +12,7 @@
 </h:head>
 <f:view>
   <h:form>
-    <div class="mainPage">
+    <div class="panelPage">
         <h:outputLabel class="mainTitle" value="Sklep internetowy z e-bookami"/>
     </div>
   <div class="header">
@@ -22,20 +22,35 @@
   </h:form>
 
   <div class="productBox">
-
+            <h:outputLabel value="#{addProductsToDBView.setNew()}"/>
     <div class="product">
-      <h:outputLabel value="#{productView.showProduct(1)}" styleClass="productName"/>
+      <h:outputLabel value="#{productView.showProductName(1)}" styleClass="productName"/>
+      <h:outputLabel value="#{productView.showProductPrice(1)}" styleClass="productName"/>
             <h:form>
-              <h:commandButton value="Dodaj do koszyka" action="#{logInView.buyProduct(1)}" styleClass="button buttonInColumnOrder"/>
+              <h:commandButton value="KUP" action="#{addOrderView.buyProduct(1)}" styleClass="button buttonInColumnOrder buttonBuy"/>
             </h:form>
     </div>
     <div class="product">
-            <h:outputLabel value="#{productView.showProduct(2)}" styleClass="productName"/>
+            <h:outputLabel value="#{productView.showProductName(2)}" styleClass="productName"/>
+            <h:outputLabel value="#{productView.showProductPrice(2)}" styleClass="productName"/>
             <h:form>
-              <h:commandButton value="Dodaj do koszyka" action="#{logInView.buyProduct(2)}" styleClass="button buttonInColumnOrder"/>
+              <h:commandButton value="KUP" action="#{addOrderView.buyProduct(2)}" styleClass="button buttonInColumnOrder buttonBuy"/>
             </h:form>
     </div>
-
+      <div class="product">
+          <h:outputLabel value="#{productView.showProductName(3)}" styleClass="productName"/>
+          <h:outputLabel value="#{productView.showProductPrice(3)}" styleClass="productName"/>
+          <h:form>
+              <h:commandButton value="KUP" action="#{addOrderView.buyProduct(3)}" styleClass="button buttonInColumnOrder buttonBuy"/>
+          </h:form>
+      </div>
+      <div class="product">
+          <h:outputLabel value="#{productView.showProductName(4)}" styleClass="productName"/>
+          <h:outputLabel value="#{productView.showProductPrice(4)}" styleClass="productName"/>
+          <h:form>
+              <h:commandButton value="KUP" action="#{addOrderView.buyProduct(4)}" styleClass="button buttonInColumnOrder buttonBuy"/>
+          </h:form>
+      </div>
     </div>
 
 

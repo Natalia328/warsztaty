@@ -1,8 +1,6 @@
 package com.airhacks.rest.store_rest;
 
 
-import java.util.Collection;
-
 public class UserResponse {
 
     private Long id;
@@ -50,18 +48,5 @@ public class UserResponse {
     public void setPassword(String password) {
         this.password = password;
     }
-
-    //    private Collection<SubjectDTO> subjects;
-//
-//    public Collection<SubjectDTO> getSubjects() {
-//        return subjects;
-//    }
-//
-//    public void setSubjects(Collection<SubjectDTO> subjects) {
-//        this.subjects = subjects;
-//    }
-
-
-
 
 }

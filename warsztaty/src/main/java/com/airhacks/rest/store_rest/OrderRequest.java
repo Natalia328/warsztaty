@@ -4,7 +4,6 @@ public class OrderRequest {
 
     private Long UserId;
     private Long ProductId;
-
     private String orderDate;
 
     public Long getProductId() {
